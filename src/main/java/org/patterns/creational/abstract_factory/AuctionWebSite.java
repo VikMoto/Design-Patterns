@@ -4,10 +4,11 @@ import org.patterns.creational.abstract_factory.website.WebSiteTeamFactory;
 
 public class AuctionWebSite {
     public static void main(String[] args) {
-        WebSiteTeamFactory webSiteTeamFactory = new WebSiteTeamFactory();
-        Developer developer = webSiteTeamFactory.getDeveloper();
-        ProjectManager projectManager = webSiteTeamFactory.getProjectManager();
-        Tester tester = webSiteTeamFactory.getTester();
+        ProjectTeamFactory projectTeamFactoryy = new WebSiteTeamFactory();
+
+        Developer developer = projectTeamFactoryy.getDeveloper();
+        ProjectManager projectManager = projectTeamFactoryy.getProjectManager();
+        Tester tester = projectTeamFactoryy.getTester();
 
         System.out.println("Creating website project...");
         developer.writeCode();

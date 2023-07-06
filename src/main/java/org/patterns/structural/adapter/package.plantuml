@@ -1,0 +1,35 @@
+@startuml
+
+!theme plain
+top to bottom direction
+skinparam linetype ortho
+
+class AdapterJavaToDatabase {
+  + AdapterJavaToDatabase(): 
+  + select(): void
+  + insert(): void
+  + remove(): void
+  + update(): void
+}
+interface Database << interface >> {
+  + update(): void
+  + remove(): void
+  + select(): void
+  + insert(): void
+}
+class DatabaseRunner {
+  + DatabaseRunner(): 
+  + main(String[]): void
+}
+class JavaApp {
+  + JavaApp(): 
+  + updateObject(): void
+  + loadObject(): void
+  + deleteObject(): void
+  + saveObject(): void
+}
+
+AdapterJavaToDatabase  -[#008200,dashed]-^  Database              
+AdapterJavaToDatabase  -[#000082,plain]-^  JavaApp               
+DatabaseRunner         -[#595959,dashed]->  AdapterJavaToDatabase : "«create»"
+@enduml

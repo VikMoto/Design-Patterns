@@ -4,10 +4,11 @@ import org.patterns.creational.abstract_factory.banking.BankTeamFactory;
 
 public class BankSystem {
     public static void main(String[] args) {
-        BankTeamFactory bankTeamFactory = new BankTeamFactory();
-        Developer developer = bankTeamFactory.getDeveloper();
-        ProjectManager projectManager = bankTeamFactory.getProjectManager();
-        Tester tester = bankTeamFactory.getTester();
+        ProjectTeamFactory projectTeamFactory = new BankTeamFactory();
+
+        Developer developer = projectTeamFactory.getDeveloper();
+        ProjectManager projectManager = projectTeamFactory.getProjectManager();
+        Tester tester = projectTeamFactory.getTester();
 
         System.out.println("Creating BankSystem project...");
         developer.writeCode();
